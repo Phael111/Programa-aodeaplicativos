@@ -1,0 +1,75 @@
+import java.util.Scanner;
+
+public class CalculadoraSimples {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+
+            System.out.println("Digite o primeiro valor numérico (ou EXIT para sair):");
+            String entrada = scanner.next();
+
+            if (entrada.equalsIgnoreCase("EXIT")) {
+                System.out.println("Programa encerrado.");
+                break;
+            }
+
+            double valor1;
+            double valor2;
+
+            try {
+                valor1 = Double.parseDouble(entrada);
+            } catch (NumberFormatException e) {
+                System.out.println("Valor inválido.");
+                continue;
+            }
+
+            System.out.println("Digite o segundo valor numérico:");
+            try {
+                valor2 = scanner.nextDouble();
+            } catch (Exception e) {
+                System.out.println("Valor inválido.");
+                scanner.nextLine();
+                continue;
+            }
+
+            System.out.println("Digite o símbolo da operação (+, -, *, /, **):");
+            String simbolo = scanner.next();
+
+            switch (simbolo) {
+                case "+":
+                    System.out.println("Resultado: " + (valor1 + valor2));
+                    break;
+
+                case "-":
+                    System.out.println("Resultado: " + (valor1 - valor2));
+                    break;
+
+                case "*":
+                    System.out.println("Resultado: " + (valor1 * valor2));
+                    break;
+
+                case "/":
+                    if (valor2 == 0) {
+                        System.out.println("Divisão não pode ser feita (denominador igual a zero).");
+                    } else {
+                        System.out.println("Resultado: " + (valor1 / valor2));
+                    }
+                    break;
+
+                case "**":
+                    System.out.println("Resultado: " + Math.pow(valor1, valor2));
+                    break;
+
+                default:
+                    System.out.println("Impossível realizar a operação.");
+            }
+
+            System.out.println("-----------------------------");
+        }
+
+        scanner.close();
+    }
+}
