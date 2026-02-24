@@ -1,0 +1,11 @@
+CREATE TABLE cliente (
+  empId INTEGER PRIMARY KEY,
+  name varchar(254) NOT NULL,
+  cpf char(14) NOT NULL,
+  email varchar(254) NOT NULL
+ 
+);
+
+INSERT INTO cliente VALUES (0001, 'raphael yan', '092.832.178-20','phael982@gmail.com');
+
+SELECT * FROM cliente
