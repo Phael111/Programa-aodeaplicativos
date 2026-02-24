@@ -1,0 +1,30 @@
+
+-- create
+CREATE TABLE usuario (
+  empId INTEGER PRIMARY KEY,
+  name varchar(254) NOT NULL,
+  cpf char(14) NOT NULL,
+  data_nasc date NOT NULL,
+  email varchar(254) NOT NULL
+ 
+);
+
+-- insert
+INSERT INTO usuario VALUES (0001, 'Heitor', '094.887.221-09', "2005-02-19",'Heitor21@gmail.com');
+INSERT INTO usuario VALUES (0002, 'Phael', '123.456.789-00', '2001-01-02', 'phael@gmail.com');
+INSERT INTO usuario VALUES (0003, 'Neymar', '113.423.987-00', '2001-09-04', 'neynar1@gmail.com');
+INSERT INTO usuario VALUES (0004, 'gabriel', '123.456.789-00', '2001-01-02', 'gabriel@gmail.com');
+-- fetch 
+SELECT * FROM usuario 
+
+
+CREATE TABLE endereco (
+  Rua text NOT NULL,
+  numero char(14) NOR NULL,
+  cep char(14)
+  
+);
+
+INSERT INTO usuario VALUES (0001, 'Rua bombeiro eliezer de aliezer', '17', '41710790');
+
+select * from endereco;
