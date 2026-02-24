@@ -1,0 +1,10 @@
+CREATE TABLE carro (
+  modelo varchar(100) NOT NULL,
+  cor varchar(100) NOT NULL,
+  preco varchar(254) NOT NULL
+ 
+);
+
+INSERT INTO carro VALUES ('nissan', 'preto','129000');
+
+SELECT * FROM carro
