@@ -1,0 +1,68 @@
+public class ContaBancaria {
+
+    private String numeroConta;
+    private String titular;
+    private double saldo;
+
+    public ContaBancaria(String numeroConta, String titular, double saldoInicial) {
+        this.numeroConta = numeroConta;
+        this.titular = titular;
+        this.saldo = saldoInicial;
+    }
+
+    public void depositar(double valor) {
+        if (valor <= 0) {
+            System.out.println("Depósito inválido. O valor não pode ser negativo ou zero.");
+        } else {
+            saldo += valor;
+            System.out.println("Depósito realizado com sucesso.");
+        }
+    }
+
+    public void sacar(double valor) {
+
+        if (valor <= 0) {
+            System.out.println("Saque inválido.");
+            return;
+        }
+
+        if (valor > saldo) {
+            System.out.println("Saldo insuficiente.");
+            return;
+        }
+
+        saldo -= valor;
+
+        int saque = (int) valor;
+
+        int c100 = saque / 100;
+        saque = saque % 100;
+
+        int c50 = saque / 50;
+        saque = saque % 50;
+
+        int c10 = saque / 10;
+        saque = saque % 10;
+
+        int c5 = saque / 5;
+        saque = saque % 5;
+
+        int c1 = saque;
+
+        System.out.println("Saque realizado: " + valor);
+
+        if (c100 > 0)
+            System.out.println(c100 + " cédula(s) de 100");
+
+        if (c50 > 0)
+            System.out.println(c50 + " cédula(s) de 50");
+
+        if (c10 > 0)
+            System.out.println(c10 + " cédula(s) de 10");
+
+        if (c5 > 0)
+            System.out.println(c5 + " cédula(s) de 5");
+
+        if (c1 > 0)
+            System.out.println(c1 + " cédula(s) de 1");
+    }
